@@ -47,9 +47,7 @@ class AWSValidation:
 
         canonical_querystring = self.REQUEST_PARAMETERS
 
-        canonical_headers = '\n'.join(
-            [f'host:{self.HOST}', f'x-amz-date:{amzdate}', '']
-        )
+        canonical_headers = 'host:' + host + '\n' + 'x-amz-date:' + amzdate + '\n'
 
         canonical_request = '\n'.join(
             [
